@@ -16,4 +16,4 @@ class SensorData(models.Model):
 	pub_date = models.DateTimeField('date published')
 
 	def __unicode__(self):
-		return "{0}% {1} C".format(humid, temperature)
+		return "{0} : {1}% {2} C".format(self.pub_date, self.humid, self.temperature)
