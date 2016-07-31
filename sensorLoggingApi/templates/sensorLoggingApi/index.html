@@ -1,0 +1,10 @@
+{% if sensor_data_list %}
+
+	<ul>
+	{% for sensorData in sensor_data_list %}
+	    <li>{{sensorData.pub_date}}, {{sensorData.humid}} , {{ sensorData.temperature}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p> No sensor data.</p>
+{% endif %}
