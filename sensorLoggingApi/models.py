@@ -4,11 +4,11 @@ from django.db import models
 
 # Create your models here.
 class EventData(models.Model):
-	videoFile = models.BinaryField()
 	pub_date = models.DateTimeField('date published')
+	fileName = models.CharField(max_length=200, default="")
 	
 	def __unicode__(self):
-		return self.pub_date
+		return "{0} : {1}".format(self.pub_date, self.fileName)
 
 class SensorData(models.Model):
 	humid = models.FloatField()

@@ -2,7 +2,24 @@
 
 	<ul>
 	{% for sensorData in sensor_data_list %}
-	    <li>{{sensorData.pub_date}}, {{sensorData.humid}} , {{ sensorData.temperature}}</a></li>
+	    <li>{{sensorData.pub_date}}, {{sensorData.humid}} , {{ sensorData.temperature}}</li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p> No sensor data.</p>
+{% endif %}
+
+
+{% if event_video_list %}
+
+	<ul>
+	{% for eventData in event_video_list %}
+	    <li>{{eventData.pub_date}},
+	        <video name='demo' controls width='50%' height='40%'>
+            <source src="/static/{{eventData.fileName}}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+            </video>
+	     
+
 	{% endfor %}
 	</ul>
 {% else %}
